@@ -72,12 +72,35 @@ button:hover {
 .scenario {
   margin-top: 28px;
 }
+.controls {
+  margin: 22px 0 8px;
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  background: #ffffff;
+  font-size: 16px;
+}
 </style>
 </head>
 <body>
 <div class="container">
 <h1>German A1-A2 Conversation Practice</h1>
 <p>10 Alltagsszenen mit kurzen einfachen Sätzen und Audio.</p>
+
+<div class="controls">
+  <label for="scenario-select">Choose a conversation</label>
+  <select id="scenario-select"></select>
+</div>
+
+<div id="scenario-root"></div>
 
 <script>
 function speak(text) {
@@ -377,10 +400,27 @@ function createScenario(title, lines) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const container = document.querySelector('.container');
-  scenarios.forEach((scenario) => {
-    container.appendChild(createScenario(scenario.title, scenario.lines));
+  const select = document.getElementById('scenario-select');
+  const root = document.getElementById('scenario-root');
+
+  scenarios.forEach((scenario, index) => {
+    const option = document.createElement('option');
+    option.value = String(index);
+    option.textContent = scenario.title;
+    select.appendChild(option);
   });
+
+  function renderScenario(index) {
+    root.innerHTML = '';
+    root.appendChild(createScenario(scenarios[index].title, scenarios[index].lines));
+  }
+
+  select.addEventListener('change', (event) => {
+    renderScenario(Number(event.target.value));
+  });
+
+  select.value = '0';
+  renderScenario(0);
 });
 </script>
 </div>
