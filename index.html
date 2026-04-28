@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>German A1 Conversation Practice</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  padding: 20px;
+}
+.container {
+  max-width: 700px;
+  margin: auto;
+}
+h1,
+h2 {
+  text-align: center;
+}
+h1 {
+  margin-bottom: 8px;
+}
+h2 {
+  margin-top: 34px;
+}
+p {
+  text-align: center;
+  color: #555555;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  background: #ffffff;
+  margin: 8px 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.speaker {
+  font-weight: bold;
+  margin-right: 6px;
+}
+.teacher {
+  color: #2b7cff;
+}
+.child {
+  color: #ff7a2b;
+}
+.speaker-a {
+  color: #2b7cff;
+}
+.speaker-b {
+  color: #ff7a2b;
+}
+button {
+  border: none;
+  background: #eaeaea;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+button:hover {
+  background: #d6d6d6;
+}
+.text {
+  flex: 1;
+}
+.scenario {
+  margin-top: 28px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>German A1-A2 Conversation Practice</h1>
+<p>10 Alltagsszenen mit kurzen einfachen Sätzen und Audio.</p>
+
+<script>
+function speak(text) {
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'de-DE';
+  speechSynthesis.speak(utterance);
+}
+
+const scenarios = [
+  {
+    title: 'At the doctor\'s office',
+    lines: [
+      ['speaker-a', 'Arzt', 'Guten Tag.'],
+      ['speaker-b', 'Patientin', 'Guten Tag.'],
+      ['speaker-a', 'Arzt', 'Wie heißen Sie?'],
+      ['speaker-b', 'Patientin', 'Ich heiße Anna Weber.'],
+      ['speaker-a', 'Arzt', 'Was fehlt Ihnen?'],
+      ['speaker-b', 'Patientin', 'Ich habe Kopfschmerzen.'],
+      ['speaker-a', 'Arzt', 'Seit wann haben Sie das?'],
+      ['speaker-b', 'Patientin', 'Seit gestern Abend.'],
+      ['speaker-a', 'Arzt', 'Haben Sie auch Fieber?'],
+      ['speaker-b', 'Patientin', 'Nein, ich habe kein Fieber.'],
+      ['speaker-a', 'Arzt', 'Haben Sie gut geschlafen?'],
+      ['speaker-b', 'Patientin', 'Nein, ich habe schlecht geschlafen.'],
+      ['speaker-a', 'Arzt', 'Trinken Sie genug Wasser?'],
+      ['speaker-b', 'Patientin', 'Heute nicht so viel.'],
+      ['speaker-a', 'Arzt', 'Ich messe kurz Ihren Blutdruck.'],
+      ['speaker-b', 'Patientin', 'Ja, natürlich.'],
+      ['speaker-a', 'Arzt', 'Sie brauchen etwas Ruhe.'],
+      ['speaker-b', 'Patientin', 'Okay, das mache ich.'],
+      ['speaker-a', 'Arzt', 'Ich schreibe Ihnen ein Rezept.'],
+      ['speaker-b', 'Patientin', 'Vielen Dank.']
+    ]
+  },
+  {
+    title: 'At the supermarket checkout',
+    lines: [
+      ['speaker-a', 'Kassiererin', 'Guten Abend.'],
+      ['speaker-b', 'Kunde', 'Guten Abend.'],
+      ['speaker-a', 'Kassiererin', 'Haben Sie alles gefunden?'],
+      ['speaker-b', 'Kunde', 'Ja, danke.'],
+      ['speaker-a', 'Kassiererin', 'Möchten Sie eine Tüte?'],
+      ['speaker-b', 'Kunde', 'Ja, bitte.'],
+      ['speaker-a', 'Kassiererin', 'Die Äpfel sind heute im Angebot.'],
+      ['speaker-b', 'Kunde', 'Das ist gut.'],
+      ['speaker-a', 'Kassiererin', 'Haben Sie eine Kundenkarte?'],
+      ['speaker-b', 'Kunde', 'Nein, ich habe keine.'],
+      ['speaker-a', 'Kassiererin', 'Das macht zusammen zwölf Euro.'],
+      ['speaker-b', 'Kunde', 'Kann ich mit Karte zahlen?'],
+      ['speaker-a', 'Kassiererin', 'Ja, natürlich.'],
+      ['speaker-b', 'Kunde', 'Einen Moment bitte.'],
+      ['speaker-a', 'Kassiererin', 'Bitte stecken Sie die Karte ein.'],
+      ['speaker-b', 'Kunde', 'Ja, mache ich.'],
+      ['speaker-a', 'Kassiererin', 'Die Zahlung ist fertig.'],
+      ['speaker-b', 'Kunde', 'Super.'],
+      ['speaker-a', 'Kassiererin', 'Hier ist Ihr Bon.'],
+      ['speaker-b', 'Kunde', 'Danke, auf Wiedersehen.']
+    ]
+  },
+  {
+    title: 'At the bakery',
+    lines: [
+      ['speaker-a', 'Verkäuferin', 'Guten Morgen.'],
+      ['speaker-b', 'Kundin', 'Guten Morgen.'],
+      ['speaker-a', 'Verkäuferin', 'Was möchten Sie?'],
+      ['speaker-b', 'Kundin', 'Ich möchte zwei Brötchen.'],
+      ['speaker-a', 'Verkäuferin', 'Sonst noch etwas?'],
+      ['speaker-b', 'Kundin', 'Ja, ein Brot bitte.'],
+      ['speaker-a', 'Verkäuferin', 'Welches Brot möchten Sie?'],
+      ['speaker-b', 'Kundin', 'Das große Bauernbrot.'],
+      ['speaker-a', 'Verkäuferin', 'Möchten Sie auch einen Kuchen?'],
+      ['speaker-b', 'Kundin', 'Nein, heute nicht.'],
+      ['speaker-a', 'Verkäuferin', 'Die Brötchen sind ganz frisch.'],
+      ['speaker-b', 'Kundin', 'Sehr gut.'],
+      ['speaker-a', 'Verkäuferin', 'Soll ich das Brot schneiden?'],
+      ['speaker-b', 'Kundin', 'Ja, bitte.'],
+      ['speaker-a', 'Verkäuferin', 'Gerne.'],
+      ['speaker-b', 'Kundin', 'Wie viel kostet das?'],
+      ['speaker-a', 'Verkäuferin', 'Das kostet fünf Euro zwanzig.'],
+      ['speaker-b', 'Kundin', 'Hier bitte.'],
+      ['speaker-a', 'Verkäuferin', 'Danke schön.'],
+      ['speaker-b', 'Kundin', 'Auf Wiedersehen.']
+    ]
+  },
+  {
+    title: 'At the pharmacy',
+    lines: [
+      ['speaker-a', 'Apothekerin', 'Guten Tag.'],
+      ['speaker-b', 'Kunde', 'Guten Tag.'],
+      ['speaker-a', 'Apothekerin', 'Wie kann ich helfen?'],
+      ['speaker-b', 'Kunde', 'Ich brauche Hustensaft.'],
+      ['speaker-a', 'Apothekerin', 'Ist der Husten stark?'],
+      ['speaker-b', 'Kunde', 'Ja, besonders nachts.'],
+      ['speaker-a', 'Apothekerin', 'Haben Sie auch Halsschmerzen?'],
+      ['speaker-b', 'Kunde', 'Ja, ein bisschen.'],
+      ['speaker-a', 'Apothekerin', 'Haben Sie ein Rezept?'],
+      ['speaker-b', 'Kunde', 'Nein, leider nicht.'],
+      ['speaker-a', 'Apothekerin', 'Dann habe ich etwas ohne Rezept.'],
+      ['speaker-b', 'Kunde', 'Das ist gut.'],
+      ['speaker-a', 'Apothekerin', 'Nehmen Sie den Saft dreimal am Tag.'],
+      ['speaker-b', 'Kunde', 'Vor dem Essen oder danach?'],
+      ['speaker-a', 'Apothekerin', 'Am besten nach dem Essen.'],
+      ['speaker-b', 'Kunde', 'Okay.'],
+      ['speaker-a', 'Apothekerin', 'Trinken Sie auch warmen Tee.'],
+      ['speaker-b', 'Kunde', 'Ja, das mache ich.'],
+      ['speaker-a', 'Apothekerin', 'Das kostet acht Euro.'],
+      ['speaker-b', 'Kunde', 'Danke, auf Wiedersehen.']
+    ]
+  },
+  {
+    title: 'At the bus stop',
+    lines: [
+      ['speaker-a', 'Person A', 'Entschuldigung, fährt der Bus nach Mitte?'],
+      ['speaker-b', 'Person B', 'Ja, der Bus fährt nach Mitte.'],
+      ['speaker-a', 'Person A', 'Kommt der Bus bald?'],
+      ['speaker-b', 'Person B', 'Ich glaube, in fünf Minuten.'],
+      ['speaker-a', 'Person A', 'Danke.'],
+      ['speaker-b', 'Person B', 'Gern.'],
+      ['speaker-a', 'Person A', 'Fahren Sie auch in die Stadt?'],
+      ['speaker-b', 'Person B', 'Ja, ich fahre zur Arbeit.'],
+      ['speaker-a', 'Person A', 'Ich bin heute zum ersten Mal hier.'],
+      ['speaker-b', 'Person B', 'Dann ist diese Linie gut für Sie.'],
+      ['speaker-a', 'Person A', 'Muss ich hier ein Ticket kaufen?'],
+      ['speaker-b', 'Person B', 'Nein, im Bus oder per App.'],
+      ['speaker-a', 'Person A', 'Ah, okay.'],
+      ['speaker-b', 'Person B', 'Dort kommt der Bus schon.'],
+      ['speaker-a', 'Person A', 'Sehr gut.'],
+      ['speaker-b', 'Person B', 'Steigen Sie vorne ein.'],
+      ['speaker-a', 'Person A', 'Hat der Bus viele Haltestellen?'],
+      ['speaker-b', 'Person B', 'Nicht so viele.'],
+      ['speaker-a', 'Person A', 'Danke für die Hilfe.'],
+      ['speaker-b', 'Person B', 'Kein Problem.']
+    ]
+  },
+  {
+    title: 'At the airport',
+    lines: [
+      ['speaker-a', 'Mitarbeiterin', 'Guten Tag. Ihren Pass bitte.'],
+      ['speaker-b', 'Reisender', 'Guten Tag. Hier ist mein Pass.'],
+      ['speaker-a', 'Mitarbeiterin', 'Wohin fliegen Sie heute?'],
+      ['speaker-b', 'Reisender', 'Ich fliege nach Berlin.'],
+      ['speaker-a', 'Mitarbeiterin', 'Haben Sie Gepäck?'],
+      ['speaker-b', 'Reisender', 'Ja, einen Koffer.'],
+      ['speaker-a', 'Mitarbeiterin', 'Stellen Sie den Koffer bitte hierhin.'],
+      ['speaker-b', 'Reisender', 'Ja, gern.'],
+      ['speaker-a', 'Mitarbeiterin', 'Der Koffer ist in Ordnung.'],
+      ['speaker-b', 'Reisender', 'Sehr gut.'],
+      ['speaker-a', 'Mitarbeiterin', 'Möchten Sie am Fenster sitzen?'],
+      ['speaker-b', 'Reisender', 'Ja, bitte.'],
+      ['speaker-a', 'Mitarbeiterin', 'Ihr Flug geht um zehn Uhr.'],
+      ['speaker-b', 'Reisender', 'Wann beginnt das Boarding?'],
+      ['speaker-a', 'Mitarbeiterin', 'Um neun Uhr dreißig.'],
+      ['speaker-b', 'Reisender', 'An welchem Gate?'],
+      ['speaker-a', 'Mitarbeiterin', 'Am Gate A zwölf.'],
+      ['speaker-b', 'Reisender', 'Danke schön.'],
+      ['speaker-a', 'Mitarbeiterin', 'Hier ist Ihre Bordkarte.'],
+      ['speaker-b', 'Reisender', 'Vielen Dank.']
+    ]
+  },
+  {
+    title: 'At school in the classroom',
+    lines: [
+      ['speaker-a', 'Lehrerin', 'Guten Morgen zusammen.'],
+      ['speaker-b', 'Schüler', 'Guten Morgen.'],
+      ['speaker-a', 'Lehrerin', 'Bitte setzt euch.'],
+      ['speaker-b', 'Schüler', 'Ja, Frau Becker.'],
+      ['speaker-a', 'Lehrerin', 'Habt ihr die Hausaufgaben?'],
+      ['speaker-b', 'Schüler', 'Ja, ich habe sie.'],
+      ['speaker-a', 'Lehrerin', 'Sehr gut.'],
+      ['speaker-b', 'Schüler', 'Darf ich etwas fragen?'],
+      ['speaker-a', 'Lehrerin', 'Ja, natürlich.'],
+      ['speaker-b', 'Schüler', 'Was machen wir heute?'],
+      ['speaker-a', 'Lehrerin', 'Wir lesen einen kurzen Text.'],
+      ['speaker-b', 'Schüler', 'Okay.'],
+      ['speaker-a', 'Lehrerin', 'Bitte öffnet eure Bücher.'],
+      ['speaker-b', 'Schüler', 'Auf welcher Seite?'],
+      ['speaker-a', 'Lehrerin', 'Auf Seite zwölf.'],
+      ['speaker-b', 'Schüler', 'Ich habe die Seite.'],
+      ['speaker-a', 'Lehrerin', 'Lies bitte den ersten Satz.'],
+      ['speaker-b', 'Schüler', 'Ja, ich lese.'],
+      ['speaker-a', 'Lehrerin', 'Sehr schön gelesen.'],
+      ['speaker-b', 'Schüler', 'Danke.']
+    ]
+  },
+  {
+    title: 'At a restaurant',
+    lines: [
+      ['speaker-a', 'Kellner', 'Guten Abend.'],
+      ['speaker-b', 'Gast', 'Guten Abend.'],
+      ['speaker-a', 'Kellner', 'Haben Sie reserviert?'],
+      ['speaker-b', 'Gast', 'Nein, leider nicht.'],
+      ['speaker-a', 'Kellner', 'Das ist kein Problem.'],
+      ['speaker-b', 'Gast', 'Haben Sie einen Tisch für zwei?'],
+      ['speaker-a', 'Kellner', 'Ja, dort am Fenster.'],
+      ['speaker-b', 'Gast', 'Danke.'],
+      ['speaker-a', 'Kellner', 'Hier ist die Speisekarte.'],
+      ['speaker-b', 'Gast', 'Danke schön.'],
+      ['speaker-a', 'Kellner', 'Möchten Sie schon etwas trinken?'],
+      ['speaker-b', 'Gast', 'Ja, ein Wasser bitte.'],
+      ['speaker-a', 'Kellner', 'Und was möchten Sie essen?'],
+      ['speaker-b', 'Gast', 'Ich nehme die Suppe.'],
+      ['speaker-a', 'Kellner', 'Möchten Sie auch einen Salat?'],
+      ['speaker-b', 'Gast', 'Nein, danke.'],
+      ['speaker-a', 'Kellner', 'Kommt sofort.'],
+      ['speaker-b', 'Gast', 'Vielen Dank.'],
+      ['speaker-a', 'Kellner', 'Später bringe ich die Rechnung.'],
+      ['speaker-b', 'Gast', 'Sehr gut.']
+    ]
+  },
+  {
+    title: 'At a hotel reception',
+    lines: [
+      ['speaker-a', 'Rezeptionistin', 'Guten Abend.'],
+      ['speaker-b', 'Gast', 'Guten Abend.'],
+      ['speaker-a', 'Rezeptionistin', 'Haben Sie eine Reservierung?'],
+      ['speaker-b', 'Gast', 'Ja, auf den Namen Klein.'],
+      ['speaker-a', 'Rezeptionistin', 'Einen Moment bitte.'],
+      ['speaker-b', 'Gast', 'Ja, gern.'],
+      ['speaker-a', 'Rezeptionistin', 'Ja, ich habe Ihre Reservierung.'],
+      ['speaker-b', 'Gast', 'Super.'],
+      ['speaker-a', 'Rezeptionistin', 'Wie viele Nächte bleiben Sie?'],
+      ['speaker-b', 'Gast', 'Zwei Nächte.'],
+      ['speaker-a', 'Rezeptionistin', 'Möchten Sie Frühstück?'],
+      ['speaker-b', 'Gast', 'Ja, bitte.'],
+      ['speaker-a', 'Rezeptionistin', 'Ihr Zimmer ist im zweiten Stock.'],
+      ['speaker-b', 'Gast', 'Hat das Zimmer WLAN?'],
+      ['speaker-a', 'Rezeptionistin', 'Ja, natürlich.'],
+      ['speaker-b', 'Gast', 'Sehr gut.'],
+      ['speaker-a', 'Rezeptionistin', 'Hier ist Ihr Schlüssel.'],
+      ['speaker-b', 'Gast', 'Danke schön.'],
+      ['speaker-a', 'Rezeptionistin', 'Der Aufzug ist rechts.'],
+      ['speaker-b', 'Gast', 'Vielen Dank.']
+    ]
+  },
+  {
+    title: 'At the library',
+    lines: [
+      ['speaker-a', 'Bibliothekarin', 'Guten Tag.'],
+      ['speaker-b', 'Besucher', 'Guten Tag.'],
+      ['speaker-a', 'Bibliothekarin', 'Kann ich Ihnen helfen?'],
+      ['speaker-b', 'Besucher', 'Ja, ich suche ein deutsches Buch.'],
+      ['speaker-a', 'Bibliothekarin', 'Für Anfänger oder für Fortgeschrittene?'],
+      ['speaker-b', 'Besucher', 'Für Anfänger, bitte.'],
+      ['speaker-a', 'Bibliothekarin', 'Dann ist dieses Buch gut.'],
+      ['speaker-b', 'Besucher', 'Das sieht gut aus.'],
+      ['speaker-a', 'Bibliothekarin', 'Haben Sie schon einen Ausweis?'],
+      ['speaker-b', 'Besucher', 'Nein, noch nicht.'],
+      ['speaker-a', 'Bibliothekarin', 'Dann brauchen Sie ein Formular.'],
+      ['speaker-b', 'Besucher', 'Wo ist das Formular?'],
+      ['speaker-a', 'Bibliothekarin', 'Hier auf dem Tisch.'],
+      ['speaker-b', 'Besucher', 'Danke.'],
+      ['speaker-a', 'Bibliothekarin', 'Sie können das Buch drei Wochen behalten.'],
+      ['speaker-b', 'Besucher', 'Das ist prima.'],
+      ['speaker-a', 'Bibliothekarin', 'Bitte bringen Sie es pünktlich zurück.'],
+      ['speaker-b', 'Besucher', 'Ja, natürlich.'],
+      ['speaker-a', 'Bibliothekarin', 'Dann wünsche ich viel Spaß beim Lesen.'],
+      ['speaker-b', 'Besucher', 'Vielen Dank.']
+    ]
+  }
+];
+
+function createScenario(title, lines) {
+  const section = document.createElement('section');
+  section.className = 'scenario';
+
+  const heading = document.createElement('h2');
+  heading.textContent = title;
+  section.appendChild(heading);
+
+  const list = document.createElement('ul');
+
+  lines.forEach(([speakerClass, speakerLabel, text]) => {
+    const item = document.createElement('li');
+
+    const textWrapper = document.createElement('div');
+    textWrapper.className = 'text';
+
+    const speaker = document.createElement('span');
+    speaker.className = `speaker ${speakerClass}`;
+    speaker.textContent = `${speakerLabel}:`;
+
+    textWrapper.appendChild(speaker);
+    textWrapper.append(` ${text}`);
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = '▶️';
+    button.addEventListener('click', () => speak(text));
+
+    item.appendChild(textWrapper);
+    item.appendChild(button);
+    list.appendChild(item);
+  });
+
+  section.appendChild(list);
+  return section;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.container');
+  scenarios.forEach((scenario) => {
+    container.appendChild(createScenario(scenario.title, scenario.lines));
+  });
+});
+</script>
+</div>
+</body>
+</html>
